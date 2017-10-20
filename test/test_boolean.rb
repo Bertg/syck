@@ -32,5 +32,10 @@ module Syck
       assert_equal "n", Syck.load("--- n")
       assert_equal "N", Syck.load("--- N")
     end
+
+    def test_not_booleans
+      assert_equal "Noémie", Syck.load("--- Noémie")
+      assert_equal "Yesÿ", Syck.load("--- Yesÿ")
+    end
   end
 end
